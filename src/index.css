@@ -2,4 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-html { scroll-behavior: smooth; }
+@layer base {
+  body {
+    background-color: #050505;
+    color: #f2f2ee;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Subtle background grid pattern */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(242, 242, 238, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(242, 242, 238, 0.03) 1px, transparent 1px);
+}
+
+/* Fine hairline borders matching christendijoux.com */
+.hairline-border {
+  border-color: rgba(242, 242, 238, 0.12);
+}
+
+.hairline-border-bright {
+  border-color: rgba(242, 242, 238, 0.28);
+}
+
+/* Monospace small technical headers */
+.mono-label {
+  font-family: 'Geist Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Giant display headings */
+.display-hero {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 800;
+  line-height: 0.85;
+  letter-spacing: -0.02em;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
