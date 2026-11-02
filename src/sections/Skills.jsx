@@ -5,88 +5,136 @@ import {
   Database,
   Cloud,
   Wrench,
-  CheckCircle,
+  CheckCircle2,
   Terminal,
   Cpu,
+  Layers,
 } from "lucide-react";
 
 export default function Skills() {
-  const skillGroups = [
+  const [selectedCategory, setSelectedCategory] = useState("all");
+
+  const skillDomains = [
     {
+      id: "frontend",
       num: "01",
       title: "Frontend Engineering",
-      subtitle: "Component Architecture & Micro-Interactions",
+      role: "REACTIVE COMPONENT ARCHITECTURES",
       icon: Code2,
-      skills: [
-        { name: "React 19 / 18", level: 95, tag: "Primary" },
-        { name: "TypeScript", level: 90, tag: "Primary" },
-        { name: "Next.js", level: 85, tag: "Framework" },
-        { name: "Tailwind CSS", level: 95, tag: "Styling" },
-        { name: "TanStack Query v5", level: 90, tag: "State" },
-        { name: "Zustand & Redux", level: 85, tag: "State" },
-        { name: "JavaScript (ES6+)", level: 95, tag: "Core" },
-        { name: "HTML5 / Semantic CSS", level: 95, tag: "Standard" },
+      description:
+        "Building accessible, zero-jank, sub-100ms render user interfaces with modular state synchronization.",
+      technologies: [
+        { name: "React 19 / 18", role: "Primary Framework" },
+        { name: "TypeScript", role: "Type Safety" },
+        { name: "Next.js", role: "SSR & App Router" },
+        { name: "Tailwind CSS", role: "Atomic Styling" },
+        { name: "TanStack Query v5", role: "Server Cache & Sync" },
+        { name: "Zustand & Redux", role: "Client State Store" },
+        { name: "JavaScript (ES6+)", role: "Modern Runtime" },
+        { name: "HTML5 / Semantic UI", role: "Accessible Standards" },
+      ],
+      highlights: [
+        "Optimistic UI updates with TanStack Query mutation invalidation",
+        "Compound component architecture with strict TypeScript contracts",
+        "Mobile-first, responsive layouts tailored for zero layout shifts (CLS)",
       ],
     },
     {
+      id: "backend",
       num: "02",
-      title: "Backend & Distributed Systems",
-      subtitle: "High-Throughput Services & Queues",
+      title: "Backend & Job Queues",
+      role: "HIGH-THROUGHPUT REST SERVICES",
       icon: Server,
-      skills: [
-        { name: "Node.js", level: 92, tag: "Primary" },
-        { name: "Express.js", level: 90, tag: "Framework" },
-        { name: "REST API Architecture", level: 95, tag: "Standard" },
-        { name: "BullMQ Job Queues", level: 88, tag: "Async" },
-        { name: "JWT & OAuth 2.0 Auth", level: 90, tag: "Security" },
-        { name: "Rate Limiting & CORS", level: 92, tag: "Security" },
-        { name: "Microservice Design", level: 82, tag: "Pattern" },
-        { name: "WebSocket & SSE", level: 80, tag: "Real-time" },
+      description:
+        "Architecting resilient APIs, decoupled asynchronous processing pipelines, and secure authentication.",
+      technologies: [
+        { name: "Node.js", role: "Event-Driven Runtime" },
+        { name: "Express.js", role: "RESTful Routing" },
+        { name: "BullMQ", role: "Redis Worker Queues" },
+        { name: "JWT & OAuth 2.0", role: "Identity & Tokens" },
+        { name: "REST Architecture", role: "Clean Domain MVC" },
+        { name: "Rate Limiting & CORS", role: "API Security" },
+        { name: "WebSockets / SSE", role: "Real-Time Streaming" },
+        { name: "Microservices", role: "Decoupled Domains" },
+      ],
+      highlights: [
+        "Asynchronous job workers processing heavy media/notification tasks",
+        "Structured middleware pipelines for auth, logging, and error triage",
+        "Granular role-based access control (RBAC) and token refresh routines",
       ],
     },
     {
+      id: "database",
       num: "03",
-      title: "Database & In-Memory Caching",
-      subtitle: "Schema Modeling & Fast Lookups",
+      title: "Database & In-Memory Store",
+      role: "DATA MODELING & ULTRA-FAST CACHING",
       icon: Database,
-      skills: [
-        { name: "MongoDB & Mongoose", level: 92, tag: "NoSQL" },
-        { name: "Redis Caching & Locking", level: 88, tag: "In-Memory" },
-        { name: "Aggregation Pipelines", level: 85, tag: "Queries" },
-        { name: "Firebase Firestore", level: 85, tag: "Cloud DB" },
-        { name: "Data Indexing & Profiling", level: 82, tag: "Perf" },
-        { name: "Schema Validation (Zod)", level: 90, tag: "Safety" },
+      description:
+        "Designing scalable data persistence, in-memory locking mechanisms, and high-performance aggregation.",
+      technologies: [
+        { name: "MongoDB & Mongoose", role: "Document Persistence" },
+        { name: "Redis Caching", role: "Sub-Millisecond Cache" },
+        { name: "Redis Mutex Locking", role: "Concurrency Safety" },
+        { name: "Aggregation Pipelines", role: "Complex Analytics" },
+        { name: "Zod Schema Validation", role: "Runtime Type Guard" },
+        { name: "Firebase Firestore", role: "Real-Time Sync DB" },
+      ],
+      highlights: [
+        "Redis-backed distributed mutex locks preventing double-booking races",
+        "Compound index optimization ensuring sub-50ms database lookups",
+        "Automated schema validation guaranteeing payload integrity",
       ],
     },
     {
+      id: "cloud",
       num: "04",
-      title: "Cloud Infrastructure & DevOps",
-      subtitle: "Service Accounts, Deployments & Containers",
+      title: "Cloud AI & Infrastructure",
+      role: "PRODUCTION DEPLOYMENTS & SERVICES",
       icon: Cloud,
-      skills: [
-        { name: "Google Cloud (Vertex AI)", level: 88, tag: "Cloud AI" },
-        { name: "Firebase Service Accounts", level: 90, tag: "GCP" },
-        { name: "Docker Containerization", level: 82, tag: "DevOps" },
-        { name: "Vercel & Firebase Hosting", level: 92, tag: "Edge" },
-        { name: "GitHub Actions CI/CD", level: 85, tag: "Automation" },
-        { name: "Coolify & VPS Management", level: 80, tag: "Self-Host" },
+      description:
+        "Managing cloud AI model integrations, service accounts, automated CI/CD pipelines, and server hosting.",
+      technologies: [
+        { name: "Google Cloud Platform", role: "Vertex AI & Compute" },
+        { name: "Service Accounts", role: "Zero-Secret In-Code Auth" },
+        { name: "Docker", role: "Container Packaging" },
+        { name: "GitHub Actions", role: "Automated CI/CD Tests" },
+        { name: "Vercel & Firebase", role: "Edge Delivery" },
+        { name: "Coolify & Linux VPS", role: "Self-Hosted Nodes" },
+      ],
+      highlights: [
+        "100% cloud migration of Google AI models to Vertex AI postpay billing",
+        "Automated GitHub Actions workflows verifying builds before production push",
+        "Isolated environment secrets management and health monitoring",
       ],
     },
     {
+      id: "workflow",
       num: "05",
-      title: "Testing, Tooling & Workflow",
-      subtitle: "Quality Assurance & Production Readiness",
+      title: "Engineering Disciplines",
+      role: "RELIABILITY, TESTING & TOOLING",
       icon: Wrench,
-      skills: [
-        { name: "Git & Advanced GitHub", level: 95, tag: "VCS" },
-        { name: "Postman API Automation", level: 90, tag: "Testing" },
-        { name: "Jest & Vitest Testing", level: 82, tag: "Unit" },
-        { name: "Vite Bundler & ESM", level: 92, tag: "Build" },
-        { name: "Linux / PowerShell CLI", level: 88, tag: "Shell" },
-        { name: "Agile / Scrum Disciplines", level: 90, tag: "Process" },
+      description:
+        "Maintaining professional engineering hygiene, test suites, clean commits, and predictable delivery.",
+      technologies: [
+        { name: "Git & Advanced GitHub", role: "Trunk-Based / PR Flow" },
+        { name: "Postman Automation", role: "Contract Testing" },
+        { name: "Jest & Vitest", role: "Unit / Integration Test" },
+        { name: "Vite & ESM", role: "Lightning Build Pipeline" },
+        { name: "PowerShell & Bash", role: "Automated Scripting" },
+        { name: "Agile & Sprint Cycles", role: "Milestone Execution" },
+      ],
+      highlights: [
+        "Trunk-based development with rigorous pull request peer reviews",
+        "Comprehensive endpoint assertions with Postman test suites",
+        "Strict ESLint rules and automated formatting for codebase uniformity",
       ],
     },
   ];
+
+  const visibleDomains =
+    selectedCategory === "all"
+      ? skillDomains
+      : skillDomains.filter((d) => d.id === selectedCategory);
 
   const engineeringPrinciples = [
     {
@@ -111,135 +159,179 @@ export default function Skills() {
     <section id="stack" className="py-20 md:py-28 border-b border-line relative">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         {/* Section Header */}
-        <div className="flex items-center gap-3 text-paper-dim font-mono text-[11px] uppercase tracking-widest pb-6 border-b border-line">
-          <span className="text-paper">03 // TECHNICAL ARSENAL</span>
-          <span>·</span>
-          <span>Engineered with Precision</span>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-line">
+          <div className="flex items-center gap-3 text-paper-dim font-mono text-[11px] uppercase tracking-widest">
+            <span className="text-paper">03 // TECHNICAL ARSENAL</span>
+            <span>·</span>
+            <span>Architecture &amp; Tools</span>
+          </div>
+
+          <div className="font-mono text-xs text-paper-dim">
+            <span>DISCIPLINE: </span>
+            <span className="text-emerald-400 font-semibold">PRODUCTION-FIRST MERN</span>
+          </div>
         </div>
 
-        {/* Section Title */}
+        {/* Section Title & Filter Tabs */}
         <div className="pt-10 md:pt-14 pb-8 flex flex-col lg:flex-row lg:items-end justify-between gap-6">
           <div>
             <h2 className="font-display font-black text-4xl sm:text-5xl md:text-6xl uppercase tracking-tight text-paper leading-[0.9]">
               CORE TECHNOLOGIES &amp; PROFICIENCIES
             </h2>
             <p className="mt-3 text-sm md:text-base text-paper-muted font-sans max-w-2xl">
-              A comprehensive view of the tools, frameworks, and architectural principles I leverage
-              to build scalable modern software.
+              An architectural breakdown of the stacks, database patterns, and cloud infrastructures
+              I employ to build resilient, production-ready software.
             </p>
           </div>
 
-          <div className="font-mono text-xs text-paper-dim">
-            <span>TOTAL TECHNOLOGIES: </span>
-            <span className="text-paper font-semibold">32+</span>
-            <span className="ml-4">FOCUS: </span>
-            <span className="text-emerald-400 font-semibold">FULL-STACK PERF</span>
+          {/* Category Filters */}
+          <div className="flex flex-wrap gap-2">
+            {[
+              { id: "all", label: "All Disciplines" },
+              { id: "frontend", label: "Frontend" },
+              { id: "backend", label: "Backend & Queues" },
+              { id: "database", label: "Database & Redis" },
+              { id: "cloud", label: "Cloud & DevOps" },
+              { id: "workflow", label: "Tooling" },
+            ].map((tab) => {
+              const active = selectedCategory === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setSelectedCategory(tab.id)}
+                  className={`px-3 py-1.5 rounded font-mono text-xs transition-all border ${
+                    active
+                      ? "bg-paper text-ink border-paper font-semibold shadow-sm"
+                      : "bg-surface/80 text-paper-muted border-line hover:border-paper/40 hover:text-paper"
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              );
+            })}
           </div>
         </div>
 
-        {/* Skills Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-6">
-          {skillGroups.map((group) => {
-            const Icon = group.icon;
+        {/* Technical Domain Cards Grid (Clean Architectural Index — No Progress Bars) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+          {visibleDomains.map((domain) => {
+            const Icon = domain.icon;
             return (
               <div
-                key={group.num}
-                className="p-6 border border-line bg-surface/60 hover:bg-surface hover:border-paper/40 transition-all duration-300 rounded flex flex-col justify-between group"
+                key={domain.id}
+                className="p-6 md:p-7 border border-line bg-surface/60 hover:bg-surface hover:border-paper/40 transition-all duration-300 rounded flex flex-col justify-between group"
               >
                 <div>
-                  <div className="flex items-center justify-between pb-4 border-b border-line text-paper-dim font-mono text-xs">
-                    <span className="text-paper font-semibold">[{group.num}]</span>
-                    <Icon size={16} className="text-paper-muted group-hover:text-paper transition-colors" />
+                  {/* Card Header */}
+                  <div className="flex items-center justify-between pb-4 border-b border-line font-mono text-xs text-paper-dim">
+                    <span className="text-paper font-semibold">[{domain.num}]</span>
+                    <div className="flex items-center gap-2">
+                      <span className="uppercase text-[10px] tracking-wider text-paper-dim">
+                        {domain.role}
+                      </span>
+                      <Icon
+                        size={15}
+                        className="text-paper-muted group-hover:text-paper transition-colors shrink-0"
+                      />
+                    </div>
                   </div>
 
-                  <h3 className="font-sans font-bold text-lg text-paper mt-4">
-                    {group.title}
+                  {/* Title & Description */}
+                  <h3 className="font-sans font-bold text-xl text-paper mt-4">
+                    {domain.title}
                   </h3>
-                  <p className="font-mono text-[11px] text-paper-dim uppercase tracking-wider mt-0.5 mb-5">
-                    {group.subtitle}
+                  <p className="font-sans text-xs text-paper-muted leading-relaxed mt-2 mb-6">
+                    {domain.description}
                   </p>
 
-                  {/* Skills List with Micro Progress Lines */}
-                  <div className="space-y-3">
-                    {group.skills.map((skill) => (
-                      <div key={skill.name} className="space-y-1">
-                        <div className="flex justify-between items-center text-xs">
-                          <span className="text-paper font-medium">{skill.name}</span>
-                          <div className="flex items-center gap-2">
-                            <span className="font-mono text-[10px] text-paper-dim px-1.5 py-0.5 rounded bg-surface-raised border border-line">
-                              {skill.tag}
-                            </span>
-                            <span className="font-mono text-[10px] text-paper-muted tabular-nums">
-                              {skill.level}%
-                            </span>
-                          </div>
+                  {/* Technology Pills Grid with Role Badges */}
+                  <div className="space-y-2">
+                    <div className="font-mono text-[10px] uppercase tracking-wider text-paper-dim mb-1">
+                      PRIMARY STACK &amp; CAPABILITIES:
+                    </div>
+                    <div className="grid grid-cols-1 gap-2">
+                      {domain.technologies.map((tech) => (
+                        <div
+                          key={tech.name}
+                          className="flex items-center justify-between px-3 py-2 rounded bg-surface-raised border border-line/80 hover:border-paper/30 transition-colors"
+                        >
+                          <span className="font-sans text-xs text-paper font-medium">
+                            {tech.name}
+                          </span>
+                          <span className="font-mono text-[10px] text-paper-dim uppercase tracking-wide">
+                            {tech.role}
+                          </span>
                         </div>
-                        {/* Thin Hairline Meter */}
-                        <div className="h-[2px] w-full bg-paper/10 rounded-full overflow-hidden">
-                          <div
-                            className="h-full bg-paper-muted group-hover:bg-paper transition-all duration-500 ease-out"
-                            style={{ width: `${skill.level}%` }}
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Production Architectural Highlights */}
+                  <div className="mt-6 pt-5 border-t border-line/70">
+                    <div className="font-mono text-[10px] uppercase tracking-wider text-paper-dim mb-2.5">
+                      PRODUCTION PRACTICES:
+                    </div>
+                    <ul className="space-y-1.5 text-xs text-paper-muted font-sans">
+                      {domain.highlights.map((item, hIdx) => (
+                        <li key={hIdx} className="flex items-start gap-2">
+                          <CheckCircle2
+                            size={13}
+                            className="text-paper-dim shrink-0 mt-0.5"
                           />
-                        </div>
-                      </div>
-                    ))}
+                          <span className="leading-snug">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               </div>
             );
           })}
+        </div>
 
-          {/* Quick Chip Overview Card */}
-          <div className="p-6 border border-line bg-surface/60 rounded flex flex-col justify-between">
-            <div>
-              <div className="flex items-center justify-between pb-4 border-b border-line text-paper-dim font-mono text-xs">
-                <span className="text-paper font-semibold">[06]</span>
-                <Cpu size={16} className="text-paper-muted" />
-              </div>
-
-              <h3 className="font-sans font-bold text-lg text-paper mt-4">
-                Architecture &amp; Cloud Systems
-              </h3>
-              <p className="font-mono text-[11px] text-paper-dim uppercase tracking-wider mt-0.5 mb-5">
-                Modern Paradigms &amp; Best Practices
-              </p>
-
-              <div className="flex flex-wrap gap-1.5">
-                {[
-                  "React 19",
-                  "TypeScript",
-                  "Node.js",
-                  "Express",
-                  "MongoDB",
-                  "Redis",
-                  "BullMQ",
-                  "TanStack Query",
-                  "Zustand",
-                  "Google Cloud Vertex AI",
-                  "Docker",
-                  "Tailwind CSS",
-                  "Firebase Auth",
-                  "RESTful APIs",
-                  "JWT",
-                  "Postman",
-                  "Vite",
-                  "Git & GitHub",
-                  "Vercel",
-                ].map((chip) => (
-                  <span
-                    key={chip}
-                    className="font-mono text-[11px] px-2.5 py-1 rounded bg-surface-raised border border-line text-paper-muted hover:text-paper hover:border-paper/40 transition-colors"
-                  >
-                    {chip}
-                  </span>
-                ))}
-              </div>
+        {/* Global Technology Inventory Strip */}
+        <div className="mt-10 p-6 md:p-8 border border-line bg-surface/40 rounded flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          <div className="space-y-1">
+            <div className="font-mono text-xs uppercase tracking-wider text-paper-dim flex items-center gap-2">
+              <Cpu size={14} className="text-paper-muted" />
+              <span>COMPLETE TECHNICAL INVENTORY</span>
             </div>
+            <p className="font-sans text-xs text-paper-muted">
+              Frameworks, protocols, and developer toolchains utilized across active repositories.
+            </p>
+          </div>
 
-            <div className="pt-6 mt-6 border-t border-line font-mono text-[11px] text-paper-dim flex items-center justify-between">
-              <span>ACTIVE STACK 2026</span>
-              <span className="text-emerald-400">PRODUCTION READY</span>
-            </div>
+          <div className="flex flex-wrap gap-1.5 max-w-2xl">
+            {[
+              "React 19",
+              "TypeScript",
+              "Node.js",
+              "Express",
+              "MongoDB",
+              "Redis",
+              "BullMQ",
+              "TanStack Query v5",
+              "Zustand",
+              "Google Cloud Vertex AI",
+              "Docker",
+              "Tailwind CSS",
+              "Zod",
+              "Firebase Auth",
+              "REST APIs",
+              "JWT",
+              "Postman",
+              "Vite",
+              "Jest",
+              "GitHub Actions",
+              "Vercel",
+            ].map((chip) => (
+              <span
+                key={chip}
+                className="font-mono text-[11px] px-2.5 py-1 rounded bg-surface-raised border border-line text-paper-muted hover:text-paper hover:border-paper/40 transition-colors"
+              >
+                {chip}
+              </span>
+            ))}
           </div>
         </div>
 
