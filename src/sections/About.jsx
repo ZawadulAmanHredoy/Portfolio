@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowUpRight, Cpu, Database, Server, Smartphone, Megaphone, ShieldCheck } from "lucide-react";
+import { ArrowUpRight, Cpu, Database, Server, Smartphone, Megaphone, ShieldCheck, FileDown } from "lucide-react";
 
 export default function About() {
   const pillars = [
@@ -85,6 +85,33 @@ export default function About() {
                 <span className="text-emerald-400 font-medium">OPEN WORLDWIDE (REMOTE)</span>
               </div>
             </div>
+
+            {/* Curriculum Vitae Download Card */}
+            <a
+              href="/MD_Zawadul_Aman_Hredoy_CV.pdf"
+              download="MD_Zawadul_Aman_Hredoy_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-5 border border-line bg-surface/60 hover:bg-surface hover:border-paper/40 rounded flex items-center justify-between group transition-all"
+            >
+              <div className="flex items-center gap-3">
+                <div className="p-2 rounded bg-surface-raised border border-line text-emerald-400 group-hover:scale-105 transition-transform">
+                  <FileDown size={18} />
+                </div>
+                <div>
+                  <div className="font-mono text-xs font-semibold text-paper group-hover:text-paper transition-colors">
+                    CURRICULUM VITAE (PDF)
+                  </div>
+                  <div className="font-mono text-[10px] text-paper-dim">
+                    Software Engineer · 2 Pages · 128 KB
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center gap-1.5 font-mono text-xs text-paper-muted group-hover:text-paper transition-colors">
+                <span>DOWNLOAD</span>
+                <ArrowUpRight size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </div>
+            </a>
           </div>
 
           {/* Right Column: 4 Architectural Pillars */}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X, FileDown } from "lucide-react";
 
 export default function Navbar() {
   const [time, setTime] = useState("");
@@ -84,8 +84,19 @@ export default function Navbar() {
           ))}
 
           <a
+            href="/MD_Zawadul_Aman_Hredoy_CV.pdf"
+            download="MD_Zawadul_Aman_Hredoy_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded border border-line bg-surface hover:border-paper/40 text-paper font-mono text-xs hover:bg-surface-raised transition-all"
+          >
+            <FileDown size={13} className="text-emerald-400" />
+            <span>CV (PDF)</span>
+          </a>
+
+          <a
             href="mailto:zawadulamanhredoy11189@gmail.com"
-            className="ml-2 inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-paper text-ink font-mono text-xs font-semibold hover:bg-paper/90 transition-all active:scale-95"
+            className="ml-1 inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-paper text-ink font-mono text-xs font-semibold hover:bg-paper/90 transition-all active:scale-95"
           >
             <span>GET IN TOUCH</span>
             <ArrowUpRight size={13} />
@@ -125,14 +136,28 @@ export default function Navbar() {
             </a>
           ))}
 
-          <a
-            href="mailto:zawadulamanhredoy11189@gmail.com"
-            onClick={() => setMobileMenuOpen(false)}
-            className="w-full text-center py-2.5 rounded bg-paper text-ink font-semibold flex items-center justify-center gap-2 mt-4"
-          >
-            <span>LET'S WORK TOGETHER</span>
-            <ArrowUpRight size={15} />
-          </a>
+          <div className="pt-2 space-y-2">
+            <a
+              href="/MD_Zawadul_Aman_Hredoy_CV.pdf"
+              download="MD_Zawadul_Aman_Hredoy_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full text-center py-2.5 rounded border border-line bg-surface hover:border-paper/40 text-paper font-semibold flex items-center justify-center gap-2"
+            >
+              <FileDown size={15} className="text-emerald-400" />
+              <span>DOWNLOAD CV (PDF)</span>
+            </a>
+
+            <a
+              href="mailto:zawadulamanhredoy11189@gmail.com"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full text-center py-2.5 rounded bg-paper text-ink font-semibold flex items-center justify-center gap-2"
+            >
+              <span>LET'S WORK TOGETHER</span>
+              <ArrowUpRight size={15} />
+            </a>
+          </div>
         </div>
       )}
     </header>

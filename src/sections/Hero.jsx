@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowDown, ArrowUpRight, Terminal, Sparkles, Code2, Layers } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Terminal, Sparkles, Code2, Layers, FileDown } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -90,6 +90,17 @@ export default function Hero() {
           >
             <span>EXPLORE SELECTED WORK</span>
             <ArrowDown size={14} />
+          </a>
+
+          <a
+            href="/MD_Zawadul_Aman_Hredoy_CV.pdf"
+            download="MD_Zawadul_Aman_Hredoy_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded border border-line bg-surface hover:border-paper/40 text-paper font-mono text-xs hover:bg-surface-raised transition-colors active:scale-95"
+          >
+            <FileDown size={14} className="text-emerald-400" />
+            <span>DOWNLOAD CV (PDF)</span>
           </a>
 
           <a

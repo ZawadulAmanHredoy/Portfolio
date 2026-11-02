@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowUp, Mail } from "lucide-react";
+import { ArrowUp, Mail, FileDown } from "lucide-react";
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
@@ -49,6 +49,16 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-wrap items-center gap-5 text-paper-muted">
+            <a
+              href="/MD_Zawadul_Aman_Hredoy_CV.pdf"
+              download="MD_Zawadul_Aman_Hredoy_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-paper transition-colors flex items-center gap-1.5 text-paper font-medium"
+            >
+              <FileDown size={13} className="text-emerald-400" />
+              <span>RESUME (PDF)</span>
+            </a>
             <a
               href="https://github.com/ZawadulAmanHredoy"
               target="_blank"
