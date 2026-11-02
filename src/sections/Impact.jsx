@@ -29,8 +29,8 @@ export default function Impact() {
     },
     {
       num: "100%",
-      label: "CLOUD MIGRATION SUCCESS",
-      desc: "Google AI models successfully moved from AI Studio keys to Google Cloud Vertex AI.",
+      label: "CLOUD & AD TECH MIGRATION",
+      desc: "PlanPost AI models moved to Google Cloud Vertex AI service accounts; TikTok Business API integrated.",
       icon: ShieldCheck,
     },
     {

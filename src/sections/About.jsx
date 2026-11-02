@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowUpRight, Cpu, Database, Server, Smartphone } from "lucide-react";
+import { ArrowUpRight, Cpu, Database, Server, Smartphone, Megaphone, ShieldCheck } from "lucide-react";
 
 export default function About() {
   const pillars = [
@@ -16,16 +16,16 @@ export default function About() {
       icon: Server,
     },
     {
-      num: "#03 · DATA & CLOUD",
-      title: "Database Modeling & Cloud Services",
-      desc: "Schema design across MongoDB and relational databases. Experience migrating services to Google Cloud (Vertex AI), configuring service accounts, and Docker containerization.",
-      icon: Database,
+      num: "#03 · AD TECH (ADS PILLAR)",
+      title: "Ad Tech & Marketing Automation",
+      desc: "Hands-on engineering at Ads Pillar building PlanPost AI: integrating TikTok Business API, Meta Marketing API, AIDA carousel creation, commercial music APIs, and automated spend distribution.",
+      icon: Megaphone,
     },
     {
-      num: "#04 · CRAFT",
-      title: "Crafted Engineering Discipline",
-      desc: "Committed to maintainable codebases: thorough test coverage, automated CI/CD pipelines, strict linting, and intuitive developer documentation.",
-      icon: Cpu,
+      num: "#04 · DATA & CLOUD",
+      title: "Cloud AI & Vertex AI Migrations",
+      desc: "Migrated generative AI pipelines from AI Studio keys to Google Cloud Vertex AI (Veo 3.1, Gemini Flash) using service accounts, Redis caching, and robust failover boundaries.",
+      icon: Database,
     },
   ];
 
@@ -44,24 +44,34 @@ export default function About() {
           {/* Left Column: Manifesto / Bio */}
           <div className="lg:col-span-5 space-y-6">
             <h2 className="font-display font-black text-4xl sm:text-5xl md:text-6xl uppercase tracking-tight text-paper leading-[0.9]">
-              ENGINEERING RESILIENT WEB EXPERIENCES
+              ENGINEERING RESILIENT WEB &amp; AD TECH SYSTEMS
             </h2>
 
             <p className="text-sm md:text-base text-paper-muted leading-relaxed font-sans">
-              I am a <strong className="text-paper font-semibold">MERN Stack Developer</strong> based in
-              Savar, Dhaka, Bangladesh. I specialize in turning complex requirements into scalable, secure,
-              and high-performance web systems — from database design and asynchronous queues to polished,
-              responsive user interfaces.
+              I am a <strong className="text-paper font-semibold">Junior Software Engineer at Ads Pillar</strong> and
+              full-stack MERN architect based in Savar, Dhaka, Bangladesh. I turn complex requirements into
+              scalable, secure, and high-performance software systems — from Ad Tech campaign automation and
+              distributed Redis queues to polished React 19 frontends.
+            </p>
+
+            <p className="text-sm md:text-base text-paper-muted leading-relaxed font-sans">
+              At <strong className="text-paper font-semibold">Ads Pillar</strong>, I engineer core modules for{" "}
+              <strong className="text-paper font-semibold">PlanPost AI</strong>, orchestrating automated publishing,
+              TikTok Business API ad pipelines, and complete infrastructure migrations to{" "}
+              <strong className="text-paper font-semibold">Google Cloud Vertex AI</strong>.
             </p>
 
             <p className="text-sm md:text-base text-paper-muted leading-relaxed font-sans">
               On a daily basis, I work with <strong className="text-paper font-semibold">React 19, Next.js,
-              TypeScript, Node.js, Express, MongoDB, and Redis</strong>. I enjoy architecting systems where
-              both the backend resilience and the frontend interaction feel effortless and instantaneous.
+              TypeScript, Node.js, Express, MongoDB, Redis, BullMQ, and Google Cloud</strong>.
             </p>
 
             {/* Location & Focus Card */}
             <div className="p-5 border border-line bg-surface rounded space-y-3 font-mono text-xs">
+              <div className="flex justify-between items-center text-paper-dim border-b border-line pb-2">
+                <span>COMPANY</span>
+                <span className="text-paper font-semibold">ADS PILLAR (DHAKA)</span>
+              </div>
               <div className="flex justify-between items-center text-paper-dim border-b border-line pb-2">
                 <span>HEADQUARTERS</span>
                 <span className="text-paper">SAVAR, DHAKA · BD</span>
@@ -98,9 +108,10 @@ export default function About() {
                       {p.desc}
                     </p>
                   </div>
-                  <div className="pt-4 mt-4 border-t border-line/60 flex items-center justify-between text-[10px] font-mono uppercase text-paper-dim group-hover:text-paper transition-colors">
-                    <span>Verified in Production</span>
-                    <ArrowUpRight size={12} />
+
+                  <div className="pt-6 mt-6 border-t border-line/60 flex items-center justify-between font-mono text-[10px] text-paper-dim">
+                    <span>STATUS: ACTIVE DISCIPLINE</span>
+                    <ArrowUpRight size={12} className="group-hover:text-paper group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </div>
                 </div>
               );

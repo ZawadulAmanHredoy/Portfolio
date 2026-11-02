@@ -9,6 +9,7 @@ import {
   Terminal,
   Cpu,
   Layers,
+  Megaphone,
 } from "lucide-react";
 
 export default function Skills() {
@@ -86,8 +87,30 @@ export default function Skills() {
       ],
     },
     {
-      id: "cloud",
+      id: "adtech",
       num: "04",
+      title: "Ad Tech & Marketing Automation",
+      role: "ADS PILLAR · SOCIAL & AD ENGINES",
+      icon: Megaphone,
+      description:
+        "Developing multi-platform ad dispatch engines, AIDA carousel flows, commercial music licensing, and automated publishing at Ads Pillar.",
+      technologies: [
+        { name: "TikTok Business API", role: "Ads, Post & Comments" },
+        { name: "Meta / FB Graph API", role: "Campaign Automation" },
+        { name: "AIDA Carousel Engine", role: "4-Group Creative Flow" },
+        { name: "Commercial Audio API", role: "Licensed Audio Library" },
+        { name: "Google Cloud Vertex AI", role: "Veo 3.1 & Gemini Flash" },
+        { name: "OAuth 2.0 Multi-Account", role: "Long-Lived Key Vault" },
+      ],
+      highlights: [
+        "Automated 4 ad groups × 4 ads (1-image carousel + TikTok music) ad generation pipeline",
+        "Unified social media posting and automated comment moderation webhooks",
+        "Direct domain verification & URL-based media dispatch for organic and paid reach",
+      ],
+    },
+    {
+      id: "cloud",
+      num: "05",
       title: "Cloud AI & Infrastructure",
       role: "PRODUCTION DEPLOYMENTS & SERVICES",
       icon: Cloud,
@@ -109,7 +132,7 @@ export default function Skills() {
     },
     {
       id: "workflow",
-      num: "05",
+      num: "06",
       title: "Engineering Disciplines",
       role: "RELIABILITY, TESTING & TOOLING",
       icon: Wrench,
@@ -188,6 +211,7 @@ export default function Skills() {
           <div className="flex flex-wrap gap-2">
             {[
               { id: "all", label: "All Disciplines" },
+              { id: "adtech", label: "Ad Tech (Ads Pillar)" },
               { id: "frontend", label: "Frontend" },
               { id: "backend", label: "Backend & Queues" },
               { id: "database", label: "Database & Redis" },

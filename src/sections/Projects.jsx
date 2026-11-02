@@ -7,21 +7,12 @@ import { projects } from "../data/projects";
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const categories = [
-    { label: "All", count: projects.length },
-    {
-      label: "Full-Stack MERN",
-      count: projects.filter((p) => p.category === "Full-Stack MERN").length,
-    },
-    {
-      label: "React & Next.js",
-      count: projects.filter((p) => p.category === "React & Next.js").length,
-    },
-    {
-      label: "APIs & Cloud",
-      count: projects.filter((p) => p.category === "APIs & Cloud").length,
-    },
-  ];
+  const categoryList = ["All", "AI & Ad Tech", "Full-Stack MERN", "React & Next.js", "APIs & Cloud"];
+
+  const categories = categoryList.map((cat) => ({
+    label: cat,
+    count: cat === "All" ? projects.length : projects.filter((p) => p.category === cat).length,
+  }));
 
   const filteredProjects =
     activeCategory === "All"

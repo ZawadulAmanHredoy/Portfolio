@@ -12,7 +12,7 @@ export default function Hero() {
         <div className="flex flex-wrap items-center justify-between gap-4 pb-6 md:pb-8 border-b border-line text-[11px] font-mono uppercase tracking-widest text-paper-muted">
           <div className="flex items-center gap-2">
             <span className="inline-block w-1.5 h-1.5 bg-paper rounded-full" />
-            <span>Full-Stack Developer &amp; MERN Architect — 2026</span>
+            <span>Junior Software Engineer @ Ads Pillar · Full-Stack &amp; Ad Tech Architect</span>
           </div>
           <div className="flex items-center gap-4 text-paper-dim">
             <span>SAVAR, DHAKA · BD</span>
@@ -31,8 +31,9 @@ export default function Hero() {
             </h2>
             <div className="max-w-md pb-2">
               <p className="text-sm md:text-base text-paper-muted font-sans leading-relaxed">
-                I build scalable, secure, and user-friendly web applications — from high-throughput
-                REST APIs and Redis caching architectures to polished, responsive frontends.
+                Software Engineer at <strong className="text-paper font-semibold">Ads Pillar</strong>.
+                I build scalable web architectures, Ad Tech campaign automation pipelines, and high-performance
+                cloud systems on Google Cloud Vertex AI and React 19.
               </p>
             </div>
           </div>
@@ -64,10 +65,10 @@ export default function Hero() {
           <div className="p-5 md:p-6 border-r border-b border-line bg-surface/50 hover:bg-surface transition-colors">
             <div className="flex items-center gap-2 text-paper-dim font-mono text-[11px] uppercase tracking-wider mb-2">
               <Sparkles size={14} className="text-paper-muted" />
-              <span>APPLIED CLOUD</span>
+              <span>CLOUD &amp; AD TECH</span>
             </div>
-            <p className="text-sm font-medium text-paper">Google Cloud &amp; Vertex AI</p>
-            <p className="text-xs text-paper-muted mt-1">Service Accounts, Firebase, Docker</p>
+            <p className="text-sm font-medium text-paper">Google Cloud &amp; TikTok Ads</p>
+            <p className="text-xs text-paper-muted mt-1">Vertex AI, Veo 3.1, AIDA Carousels</p>
           </div>
 
           {/* Box 4 */}
